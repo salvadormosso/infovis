@@ -1,22 +1,13 @@
-
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis trabajos en Infovis</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Mis trabajos en infovis</title>
 </head>
-
 <body>
+  <h1>Hola Mundo!</h1>
+  <div class="flourish-embed flourish-scatter" data-src="visualisation/30901647"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/30901647/thumbnail" width="100%" alt="scatter visualization" /></noscript></div><div class="flourish-fallback" data-for="visualisation/30901647"><a href="https://public.flourish.studio/visualisation/30901647/visualisation.json?ref=embed-script">https://public.flourish.studio/visualisation/30901647/visualisation.json?ref=embed-script</a></div>
 
-    <h1>¡Hola Mundo!</h1>
-
-    <h2>Mi primera visualización</h2>
-
-    <div class="flourish-embed flourish-chart" data-src="visualisation/30757327">
-        <script src="https://public.flourish.studio/resources/embed.js"></script>
-    </div>
-
-</body>
-</html>
-
+    
+  </object>
