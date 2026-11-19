@@ -1,1 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Libros leídos · TP Visualización de la Información</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --bg: #f7f4ee;
+  --card: #ffffff;
+  --ink: #1f1d1a;
+  --muted: #6b665e;
+  --accent: #8a3b2b;
+  --line: #e6e0d4;
+}
 
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* ---------- Encabezado ---------- */
+.hero {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 64px 24px 32px;
+}
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .8rem;
+  color: var(--accent);
+  margin: 0 0 8px;
+}
+h1, h2 { font-family: "Fraunces", Georgia, serif; line-height: 1.2; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin: 0 0 12px; }
+h2 { font-size: 1.6rem; margin: 8px 0 8px; }
+.subtitle { font-size: 1.15rem; color: var(--muted); max-width: 720px; }
+.author { font-size: .9rem; color: var(--muted); }
+
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.toc a {
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  background: var(--card);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: .9rem;
+}
+.toc a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Secciones ---------- */
+main { max-width: 1000px; margin: 0 auto; padding: 0 24px 48px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 28px;
+  margin: 24px 0;
+  scroll-margin-top: 16px;
+}
+.tool {
+  display: inline-block;
+  font-size: .75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--accent);
+  background: #f3e7e3;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+.insight { color: var(--muted); margin-top: 0; }
+.note {
+  font-size: .95rem;
+  border-left: 3px solid var(--accent);
+  padding-left: 12px;
+  margin-top: 16px;
+}
+.vars { columns: 2; padding-left: 18px; }
+@media (max-width: 640px) { .vars { columns: 1; } }
+
+/* ---------- Contenedores de gráficos (responsive) ---------- */
+.frame {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #faf8f4;
+  border: 1px solid var(--line);
+}
+.frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.frame-16x9 { aspect-ratio: 16 / 9; min-height: 420px; }
+.frame-tall { aspect-ratio: 4 / 3; min-height: 560px; }
+.frame-static { padding: 12px; }
+.frame-static img { display: block; width: 100%; height: auto; }
+
+/* ---------- Tabla comparativa ---------- */
+.compare { width: 100%; border-collapse: collapse; font-size: .92rem; margin-top: 12px; }
+.compare th, .compare td { text-align: left; padding: 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.compare th { font-weight: 500; color: var(--muted); }
+
+footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 24px; }
+
+.frame object{display:block;width:100%;height:auto;}
+.frame-auto{min-height:450px;}
+</style>
+</head>
+<body>
+
+  <!-- ===================== ENCABEZADO ===================== -->
+  <header class="hero">
+    <p class="kicker">Posgrado en Ciencia de Datos · Visualización de la Información</p>
+    <h1> Libros Leídos</h1>
+    <p class="subtitle"> qué géneros, de qué autores y países, cuántas páginas y cómo cambiaron mis lecturas con los años.</p>
+    
+    <nav class="toc">
+      <a href="#datos">Los datos</a>
+      <a href="#flourish">Flourish</a>
+      <a href="#rawgraphs">RAWGraphs</a>
+      <a href="#tableau">Tableau</a>
+      <a href="#powerbi">Power BI</a>
+      <a href="#conclusiones">Conclusiones</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===================== DATOS ===================== -->
+    <section id="datos" class="card">
+      <h2>Los datos</h2>
+      <p>La base de datos es propia: un registro de cada libro leído con las siguientes variables.</p>
+      <ul class="vars">
+        <li><b>titulo</b>, <b>autor</b>, <b>editorial</b> — texto</li>
+        <li><b>genero</b> — 6 categorías (suspenso y policial, novela, desarrollo personal, etc.)</li>
+        <li><b>tipo</b> — ficción / no ficción</li>
+        <li><b>pais_autor</b>, <b>idioma_original</b> — geográficas</li>
+        <li><b>genero_autor</b> — mujer / hombre</li>
+        <li><b>anio_publicacion</b>, <b>decada</b> — temporales</li>
+        <li><b>paginas</b> — numérica</li>
+        <li><b>calificacion</b> — numérica (1 a 5)</li>
+        <li><b>formato</b> — papel / digital</li>
+        <li><b>estado</b> — leído, leyendo, por leer, abandonado</li>
+      </ul>
+      <p>Fuente: exportación de mi biblioteca de Goodreads <strong>28 libros</strong> en total, de los cuales <strong>20 leídos</strong> (7.335 páginas). <a href="libros.csv" download>Descargar el dataset (CSV)</a></p>
+    </section>
+
+    <!-- ===================== FLOURISH ===================== -->
+    <section id="flourish" class="card">
+      <span class="tool">Flourish</span>
+      <h2>¿Libros más largos, más nuevos, mejor calificados?</h2>
+      <p class="insight">Gráfico de dispersión: año de publicación original vs. cantidad de páginas. El color indica el género y el tamaño, mi calificación.</p>
+      <div class="frame frame-auto">
+        <<div class="flourish-embed flourish-scatter" data-src="visualisation/30939784"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/30939784/thumbnail" width="100%" alt="scatter visualization" /></noscript></div><div class="flourish-fallback" data-for="visualisation/30939784"><a href="https://public.flourish.studio/visualisation/30939784/visualisation.json?ref=embed-script">https://public.flourish.studio/visualisation/30939784/visualisation.json?ref=embed-script</a></div>->
+        <div class="flourish-embed flourish-chart" data-src="visualisation/XXXXXXX"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+      </div>
+    </section>
+
+    <!-- ===================== RAWGRAPHS ===================== -->
+    <section id="rawgraphs" class="card">
+      <span class="tool">RAWGraphs</span>
+      <h2> Idioma original de los libros</h2>
+      <p class="insight">Diagrama aluvial: cómo se reparten los libros entre ficción / no ficción, género e idioma</p>
+      <div class="frame frame-static">
+        <!-- Subí el SVG exportado de RAWGraphs a la raíz del repo con este nombre -->
+        <object type="image/svg+xml" data="viz (1).svg">Diagrama aluvial: tipo → género → idioma original</object>
+      </div>
+    </section>
+
+    <!-- ===================== TABLEAU ===================== -->
+    <section id="tableau" class="card">
+      <span class="tool">Tableau Public</span>
+      <h2>¿De dónde vienen los autores que leo?</h2>
+      <p class="insight">Mapa de países de los autores</p>
+      <div class="frame frame-auto">
+        <<div class='tableauPlaceholder' id='viz1795046996005' style='position: relative'><noscript><a href='#'><img alt='Nacionalidad de los Autores ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;YD&#47;YDXSQWHRY&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;YDXSQWHRY' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;YD&#47;YDXSQWHRY&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1795046996005');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        
+      </div>
+    </section>
+
+    <!-- ===================== POWER BI ===================== -->
+    <section id="powerbi" class="card">
+      <span class="tool">Power BI</span>
+      <h2>Tablero general de lectura</h2>
+      <p class="insight">KPIs (libros leídos, páginas, calificación promedio), estado de la biblioteca, autores y segmentadores interactivos.</p>
+      <div class="frame frame-16x9">
+        <!-- REEMPLAZAR por el src del código "Publicar en la web" de Power BI -->
+        <iframe src="https://app.powerbi.com/view?r=XXXXXXXXXXXXXXXX" title="Tablero de lectura (Power BI)" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <p class="note">Lectura: COMENTÁ ACÁ QUÉ SE OBSERVA.</p>
+    </section>
+
+    <!-- ===================== CONCLUSIONES ===================== -->
+    <section id="conclusiones" class="card">
+      <h2>Conclusiones</h2>
+      <p>ESCRIBÍ ACÁ 3–5 hallazgos principales y una reflexión sobre qué herramienta resultó más adecuada para cada tipo de gráfico.</p>
+      <table class="compare">
+        <thead><tr><th>Herramienta</th><th>Gráfico</th><th>Fortaleza</th><th>Limitación</th></tr></thead>
+        <tbody>
+          <tr><td>Flourish</td><td>Dispersión</td><td>Tooltips y leyenda interactiva sin código</td><td>Personalización limitada en la versión gratuita</td></tr>
+          <tr><td>RAWGraphs</td><td>Aluvial</td><td>Gráficos poco convencionales, exporta SVG</td><td>Estático, no aloja online</td></tr>
+          <tr><td>Tableau</td><td>Mapa + dashboard</td><td>Geocodificación y filtros cruzados</td><td>Tableau Public deja los datos públicos</td></tr>
+          <tr><td>Power BI</td><td>Tablero de KPIs</td><td>Modelado y medidas DAX</td><td>"Publicar en la web" requiere cuenta institucional</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Datos propios · Hecho con Flourish, RAWGraphs, Tableau Public y Power BI · Publicado con GitHub Pages</p>
+  </footer>
+
+</body>
+</html>
