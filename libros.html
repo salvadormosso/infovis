@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi vida en libros · TP Visualización de la Información</title>
+  <title> Libros leídos · TP Visualización de la Información</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
@@ -125,9 +125,9 @@ footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 24
   <!-- ===================== ENCABEZADO ===================== -->
   <header class="hero">
     <p class="kicker">Posgrado en Ciencia de Datos · Visualización de la Información</p>
-    <h1>Mi vida en libros</h1>
-    <p class="subtitle">Un recorrido visual por los libros que leí a lo largo de mi vida: qué géneros, de qué autores y países, cuántas páginas y cómo cambiaron mis lecturas con los años.</p>
-    <p class="author">Trabajo práctico de <strong>TU NOMBRE</strong> · Profesor/a: <strong>NOMBRE</strong> · Noviembre 2026</p>
+    <h1> Libros Leídos</h1>
+    <p class="subtitle"> qué géneros, de qué autores y países, cuántas páginas y cómo cambiaron mis lecturas con los años.</p>
+    
     <nav class="toc">
       <a href="#datos">Los datos</a>
       <a href="#flourish">Flourish</a>
@@ -156,7 +156,7 @@ footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 24
         <li><b>formato</b> — papel / digital</li>
         <li><b>estado</b> — leído, leyendo, por leer, abandonado</li>
       </ul>
-      <p>Fuente: exportación de mi biblioteca de Goodreads, limpiada y enriquecida con género, país e idioma original de cada obra. <strong>28 libros</strong> en total, de los cuales <strong>20 leídos</strong> (7.335 páginas). <a href="libros.csv" download>Descargar el dataset (CSV)</a></p>
+      <p>Fuente: exportación de mi biblioteca de Goodreads <strong>28 libros</strong> en total, de los cuales <strong>20 leídos</strong> (7.335 páginas). <a href="libros.csv" download>Descargar el dataset (CSV)</a></p>
     </section>
 
     <!-- ===================== FLOURISH ===================== -->
@@ -165,34 +165,31 @@ footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 24
       <h2>¿Libros más largos, más nuevos, mejor calificados?</h2>
       <p class="insight">Gráfico de dispersión: año de publicación original vs. cantidad de páginas. El color indica el género y el tamaño, mi calificación.</p>
       <div class="frame frame-auto">
-        <!-- PEGAR ACÁ el código de Flourish (Export & publish > Embed). Reemplazá XXXXXXX por tu número -->
+        <<div class="flourish-embed flourish-scatter" data-src="visualisation/30939784"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/30939784/thumbnail" width="100%" alt="scatter visualization" /></noscript></div><div class="flourish-fallback" data-for="visualisation/30939784"><a href="https://public.flourish.studio/visualisation/30939784/visualisation.json?ref=embed-script">https://public.flourish.studio/visualisation/30939784/visualisation.json?ref=embed-script</a></div>->
         <div class="flourish-embed flourish-chart" data-src="visualisation/XXXXXXX"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
       </div>
-      <p class="note">Lectura: COMENTÁ ACÁ QUÉ SE OBSERVA (ej.: la novela domina hasta 2015, después crece el ensayo).</p>
     </section>
 
     <!-- ===================== RAWGRAPHS ===================== -->
     <section id="rawgraphs" class="card">
       <span class="tool">RAWGraphs</span>
-      <h2>De la ficción al idioma original</h2>
-      <p class="insight">Diagrama aluvial: cómo se reparten los libros entre ficción / no ficción, género e idioma en que fueron escritos.</p>
+      <h2> Idioma original de los libros</h2>
+      <p class="insight">Diagrama aluvial: cómo se reparten los libros entre ficción / no ficción, género e idioma</p>
       <div class="frame frame-static">
         <!-- Subí el SVG exportado de RAWGraphs a la raíz del repo con este nombre -->
-        <object type="image/svg+xml" data="libros_raw.svg">Diagrama aluvial: tipo → género → idioma original</object>
+        <object type="image/svg+xml" data="viz (1).svg">Diagrama aluvial: tipo → género → idioma original</object>
       </div>
-      <p class="note">Lectura: COMENTÁ ACÁ QUÉ SE OBSERVA.</p>
     </section>
 
     <!-- ===================== TABLEAU ===================== -->
     <section id="tableau" class="card">
       <span class="tool">Tableau Public</span>
       <h2>¿De dónde vienen los autores que leo?</h2>
-      <p class="insight">Mapa de países de los autores combinado con un dashboard filtrable por género y estado de lectura.</p>
+      <p class="insight">Mapa de países de los autores</p>
       <div class="frame frame-auto">
-        <!-- PEGAR ACÁ el código completo de Tableau Public (Compartir > Insertar código):
-             empieza con <div class='tableauPlaceholder' ...> y termina con </script> -->
+        <<div class='tableauPlaceholder' id='viz1795046996005' style='position: relative'><noscript><a href='#'><img alt='Nacionalidad de los Autores ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;YD&#47;YDXSQWHRY&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;YDXSQWHRY' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;YD&#47;YDXSQWHRY&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1795046996005');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        
       </div>
-      <p class="note">Lectura: COMENTÁ ACÁ QUÉ SE OBSERVA.</p>
     </section>
 
     <!-- ===================== POWER BI ===================== -->
