@@ -126,7 +126,7 @@ footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 24
   <header class="hero">
     <p class="kicker">Posgrado en Ciencia de Datos · Visualización de la Información</p>
     <h1> Libros Leídos</h1>
-    <p class="subtitle"> qué géneros, de qué autores y países, cuántas páginas y cómo cambiaron mis lecturas con los años.</p>
+    <p class="subtitle">Qué géneros, de qué autores y países y cuántas páginas tienen los libros de mi biblioteca.</p>
     
     <nav class="toc">
       <a href="#datos">Los datos</a>
@@ -134,7 +134,7 @@ footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 24
       <a href="#rawgraphs">RAWGraphs</a>
       <a href="#tableau">Tableau</a>
       <a href="#powerbi">Power BI</a>
-      <a href="#conclusiones">Conclusiones</a>
+      <a href="#conclusiones">Herramientas</a>
     </nav>
   </header>
 
@@ -165,8 +165,7 @@ footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 24
       <h2>¿Libros más largos, más nuevos, mejor calificados?</h2>
       <p class="insight">Gráfico de dispersión: año de publicación original vs. cantidad de páginas. El color indica el género y el tamaño, mi calificación.</p>
       <div class="frame frame-auto">
-        <<div class="flourish-embed flourish-scatter" data-src="visualisation/30939784"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/30939784/thumbnail" width="100%" alt="scatter visualization" /></noscript></div><div class="flourish-fallback" data-for="visualisation/30939784"><a href="https://public.flourish.studio/visualisation/30939784/visualisation.json?ref=embed-script">https://public.flourish.studio/visualisation/30939784/visualisation.json?ref=embed-script</a></div>->
-        <div class="flourish-embed flourish-chart" data-src="visualisation/XXXXXXX"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        <div class="flourish-embed flourish-scatter" data-src="visualisation/30939784"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/30939784/thumbnail" width="100%" alt="scatter visualization" /></noscript></div><div class="flourish-fallback" data-for="visualisation/30939784"><a href="https://public.flourish.studio/visualisation/30939784/visualisation.json?ref=embed-script">https://public.flourish.studio/visualisation/30939784/visualisation.json?ref=embed-script</a></div>
       </div>
     </section>
 
@@ -176,7 +175,6 @@ footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 24
       <h2> Idioma original de los libros</h2>
       <p class="insight">Diagrama aluvial: cómo se reparten los libros entre ficción / no ficción, género e idioma</p>
       <div class="frame frame-static">
-        <!-- Subí el SVG exportado de RAWGraphs a la raíz del repo con este nombre -->
         <object type="image/svg+xml" data="viz (1).svg">Diagrama aluvial: tipo → género → idioma original</object>
       </div>
     </section>
@@ -187,7 +185,7 @@ footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 24
       <h2>¿De dónde vienen los autores que leo?</h2>
       <p class="insight">Mapa de países de los autores</p>
       <div class="frame frame-auto">
-        <<div class='tableauPlaceholder' id='viz1795046996005' style='position: relative'><noscript><a href='#'><img alt='Nacionalidad de los Autores ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;YD&#47;YDXSQWHRY&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;YDXSQWHRY' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;YD&#47;YDXSQWHRY&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1795046996005');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        <div class='tableauPlaceholder' id='viz1795046996005' style='position: relative'><noscript><a href='#'><img alt='Nacionalidad de los Autores ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;YD&#47;YDXSQWHRY&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;YDXSQWHRY' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;YD&#47;YDXSQWHRY&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1795046996005');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
         
       </div>
     </section>
@@ -201,13 +199,11 @@ footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 24
         <!-- REEMPLAZAR por el src del código "Publicar en la web" de Power BI -->
         <iframe src="https://app.powerbi.com/view?r=XXXXXXXXXXXXXXXX" title="Tablero de lectura (Power BI)" loading="lazy" allowfullscreen></iframe>
       </div>
-      <p class="note">Lectura: COMENTÁ ACÁ QUÉ SE OBSERVA.</p>
     </section>
 
     <!-- ===================== CONCLUSIONES ===================== -->
     <section id="conclusiones" class="card">
-      <h2>Conclusiones</h2>
-      <p>ESCRIBÍ ACÁ 3–5 hallazgos principales y una reflexión sobre qué herramienta resultó más adecuada para cada tipo de gráfico.</p>
+      <h2>Comparación de herramientas</h2>
       <table class="compare">
         <thead><tr><th>Herramienta</th><th>Gráfico</th><th>Fortaleza</th><th>Limitación</th></tr></thead>
         <tbody>
